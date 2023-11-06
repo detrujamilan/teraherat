@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100;300;400;500;600;700;800;900&display=swap'); */
+
+@font-face {
+  font-family: calibri;
+  src: url(./assets/fonts/calibri-regular.ttf);
+}
+@font-face {
+  font-family: calibriBold;
+  src: url(./assets/fonts/calibri-bold.ttf);
+}
+@font-face {
+  font-family: geo1;
+  src: url(./assets/fonts/2.otf);
+}
+@font-face {
+  font-family: geo2;
+  src: url(./assets/fonts/1.otf);
+}
+
+/* body {
+  width: 796.8px;
+} */
+
+.spot-table {
+  margin: 0;
+}
+
+tr td,
+td,
+th {
+  border: 1px solid #808080;
+}
+
+.data tbody > tr:last-child > td {
+  border-bottom: 0px;
+}
+.ttable tbody > tr:last-child > td {
+  border-bottom: 0px;
+}
