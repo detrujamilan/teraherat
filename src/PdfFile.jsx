@@ -6,20 +6,20 @@ const getRelativeSize = (basePixle) => {
   return (window.innerHeight * basePixle) / h;
 };
 const PdfFile = () => {
-  const headerHeading = getRelativeSize(24);
+  const headerHeading = getRelativeSize(22);
+  const headerHeight = getRelativeSize(148);
   const logoWidth = getRelativeSize(140);
-  const subTitle = getRelativeSize(13);
+  const subTitle = getRelativeSize(12);
   const tabelFontSize = getRelativeSize(11);
   const footerFontSize = getRelativeSize(12);
   const reportMArgin = getRelativeSize(4);
-  const reportFontSize = getRelativeSize(14);
+  const reportFontSize = getRelativeSize(13);
   const rowWidth = getRelativeSize(75);
   const tabelHeight = getRelativeSize(90);
-  const identificationHeight = getRelativeSize(40);
-  const identificationWidth = getRelativeSize(150);
   const InspectedPadding = getRelativeSize(75);
   const InspectedHeight = getRelativeSize(2);
   const thPadding = getRelativeSize(4);
+  const secThPadding = getRelativeSize(3);
   const thHeight = getRelativeSize(40);
   const thMaxWidth = getRelativeSize(150);
   const divPadding = getRelativeSize(1);
@@ -27,7 +27,10 @@ const PdfFile = () => {
   return (
     <>
       <div className="px-4">
-        <div className="flex justify-between items-center">
+        <div
+          className="flex justify-between items-center"
+          style={{ height: headerHeight }}
+        >
           <div>
             <img src={logo} style={{ width: logoWidth }} />
           </div>
@@ -70,262 +73,260 @@ const PdfFile = () => {
         RADIOGRAPHIC EXAMINATION REPORT
       </h4>
       <div className="px-4">
-        <div className="ftabel">
-          <table className="w-[100%]">
-            <tbody className="border-t-2 border-l-2 border-r-2 border-[#808080]">
-              <tr>
-                <td colSpan={2} style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>Report No:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>&nbsp;TES/23-24/RT/3170A</span>
-                    </div>
+        <table className="w-[100%]">
+          <tbody className="border-t-2 border-l-2 border-r-2 border-[#808080]">
+            <tr>
+              <td colSpan={2} style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>Report No:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>&nbsp;TES/23-24/RT/3170A</span>
                   </div>
-                </td>
-                <td colSpan={2} style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>Date of Report:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>&nbsp;04-11-2023</span>
-                    </div>
+                </div>
+              </td>
+              <td colSpan={2} style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>Date of Report:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>&nbsp;04-11-2023</span>
                   </div>
-                </td>
-              </tr>
-              <tr>
-                <td colSpan={2} style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>Client:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>&nbsp;L&amp;T ( IOCL, Dumad)</span>
-                    </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colSpan={2} style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>Client:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>&nbsp;L&amp;T ( IOCL, Dumad)</span>
                   </div>
-                </td>
-                <td colSpan={2} style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>TPI:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>&nbsp;</span>
-                    </div>
+                </div>
+              </td>
+              <td colSpan={2} style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>TPI:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>&nbsp;</span>
                   </div>
-                </td>
-              </tr>
-              <tr>
-                <td colSpan={2} style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>Job/Project No.:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>&nbsp;S010498</span>
-                    </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colSpan={2} style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>Job/Project No.:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>&nbsp;S010498</span>
                   </div>
-                </td>
-                <td colSpan={2} style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>Date of Inspection:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>&nbsp;03-11-2023</span>
-                    </div>
+                </div>
+              </td>
+              <td colSpan={2} style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>Date of Inspection:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>&nbsp;03-11-2023</span>
                   </div>
-                </td>
-              </tr>
-              <tr>
-                <td colSpan={2} style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>Seam Part No.:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>&nbsp;-</span>
-                    </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colSpan={2} style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>Seam Part No.:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>&nbsp;-</span>
                   </div>
-                </td>
-                <td colSpan={2} style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>Procedure:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>&nbsp;LTFE-FPOH-21005-RT-PIPING</span>
-                    </div>
+                </div>
+              </td>
+              <td colSpan={2} style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>Procedure:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>&nbsp;LTFE-FPOH-21005-RT-PIPING</span>
                   </div>
-                </td>
-              </tr>
-              <tr>
-                <td colSpan={2} style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>Exposure Device:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>&nbsp;Gamma ray</span>
-                    </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colSpan={2} style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>Exposure Device:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>&nbsp;Gamma ray</span>
                   </div>
-                </td>
-                <td colSpan={2} style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>Inspected Material:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>&nbsp;CS</span>
-                    </div>
+                </div>
+              </td>
+              <td colSpan={2} style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>Inspected Material:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>&nbsp;CS</span>
                   </div>
-                </td>
-              </tr>
-              <tr>
-                <td style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>Sr. No.:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>&nbsp;2674</span>
-                    </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>Sr. No.:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>&nbsp;2674</span>
                   </div>
-                </td>
-                <td style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>Source Type:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>&nbsp;Ir-192</span>
-                    </div>
+                </div>
+              </td>
+              <td style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>Source Type:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>&nbsp;Ir-192</span>
                   </div>
-                </td>
-                <td style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>Radioactivity:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>&nbsp;11 Ci</span>
-                    </div>
+                </div>
+              </td>
+              <td style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>Radioactivity:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>&nbsp;11 Ci</span>
                   </div>
-                </td>
-                <td style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>Source Size:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>&nbsp;2.01 mm X 1.02 mm</span>
-                    </div>
+                </div>
+              </td>
+              <td style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>Source Size:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>&nbsp;2.01 mm X 1.02 mm</span>
                   </div>
-                </td>
-              </tr>
-              <tr>
-                <td colSpan={2} style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>IQI Placement:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>&nbsp;Source Side</span>
-                    </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colSpan={2} style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>IQI Placement:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>&nbsp;Source Side</span>
                   </div>
-                </td>
-                <td colSpan={2} style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>IQI Type:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>&nbsp;ASTM 1A06</span>
-                    </div>
+                </div>
+              </td>
+              <td colSpan={2} style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>IQI Type:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>&nbsp;ASTM 1A06</span>
                   </div>
-                </td>
-              </tr>
-              <tr>
-                <td style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>Film Make:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>&nbsp;Agfa</span>
-                    </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>Film Make:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>&nbsp;Agfa</span>
                   </div>
-                </td>
-                <td style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>Film Type:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>&nbsp;D2</span>
-                    </div>
+                </div>
+              </td>
+              <td style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>Film Type:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>&nbsp;D2</span>
                   </div>
-                </td>
-                <td style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>Film Density:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>&nbsp;2-4</span>
-                    </div>
+                </div>
+              </td>
+              <td style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>Film Density:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>&nbsp;2-4</span>
                   </div>
-                </td>
-                <td style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>Sensitivity:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>&nbsp;2% OF T</span>
-                    </div>
+                </div>
+              </td>
+              <td style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>Sensitivity:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>&nbsp;2% OF T</span>
                   </div>
-                </td>
-              </tr>
-              <tr>
-                <td colSpan={2} style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>RT Technique:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>
-                        &nbsp;Double Wall Single Image (DWSI), Double Wall
-                        Double Image (DWDI)
-                      </span>
-                    </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colSpan={2} style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>RT Technique:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>
+                      &nbsp;Double Wall Single Image (DWSI), Double Wall Double
+                      Image (DWDI)
+                    </span>
                   </div>
-                </td>
-                <td colSpan={2} style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>Accept Criteria:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>&nbsp;ASME SECTION VIII DIV-1 EDITION 2021</span>
-                    </div>
+                </div>
+              </td>
+              <td colSpan={2} style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>Accept Criteria:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>&nbsp;ASME SECTION VIII DIV-1 EDITION 2021</span>
                   </div>
-                </td>
-              </tr>
-              <tr>
-                <td style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>SOD:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>&nbsp;16" / 16"</span>
-                    </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>SOD:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>&nbsp;16" / 16"</span>
                   </div>
-                </td>
-                <td style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>OFD:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>&nbsp;5.56 mm / 5.08 mm</span>
-                    </div>
+                </div>
+              </td>
+              <td style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>OFD:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>&nbsp;5.56 mm / 5.08 mm</span>
                   </div>
-                </td>
-                <td style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>Exposure Time:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>&nbsp;13:53 / 13:10 Min</span>
-                    </div>
+                </div>
+              </td>
+              <td style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>Exposure Time:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>&nbsp;13:53 / 13:10 Min</span>
                   </div>
-                </td>
-                <td style={{ padding: thPadding }}>
-                  <div style={{ fontSize: tabelFontSize }}>
-                    <strong>Development Time:</strong>
-                    <div style={{ display: "inline" }}>
-                      <span>&nbsp;05 Minute @ 20° C</span>
-                    </div>
+                </div>
+              </td>
+              <td style={{ padding: thPadding }}>
+                <div style={{ fontSize: tabelFontSize }}>
+                  <strong>Development Time:</strong>
+                  <div style={{ display: "inline" }}>
+                    <span>&nbsp;05 Minute @ 20° C</span>
                   </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <table className="w-[100%] border-l-2  border-[#808080] border-r-2 border-b-0    spot-table">
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table className="w-[100%] border-l-2  border-[#808080] border-r-2 border-b-0">
           <thead style={{ fontSize: tabelFontSize }}>
-            <tr className="p-20">
-              <th style={{ padding: thPadding }}>Sr. No.</th>
-              <th style={{ padding: thPadding }}>Identification No.</th>
-              <th style={{ padding: thPadding }}>Dia.</th>
-              <th style={{ padding: thPadding }}>
+            <tr>
+              <th style={{ padding: secThPadding }}>Sr. No.</th>
+              <th style={{ padding: secThPadding }}>Identification No.</th>
+              <th style={{ padding: secThPadding }}>Dia.</th>
+              <th style={{ padding: secThPadding }}>
                 Joint <br /> No.
               </th>
-              <th style={{ padding: thPadding }}>
+              <th style={{ padding: secThPadding }}>
                 Thick.
                 <br />
                 (mm)
               </th>
-              <th style={{ padding: thPadding }}>Film Size</th>
-              <th style={{ padding: thPadding }}>Spot</th>
-              <th style={{ padding: thPadding }}>Observation</th>
-              <th style={{ padding: thPadding }}>Result</th>
-              <th style={{ padding: thPadding }}>
+              <th style={{ padding: secThPadding }}>Film Size</th>
+              <th style={{ padding: secThPadding }}>Spot</th>
+              <th style={{ padding: secThPadding }}>Observation</th>
+              <th style={{ padding: secThPadding }}>Result</th>
+              <th style={{ padding: secThPadding }}>
                 Welder
                 <br /> No.
               </th>
@@ -337,8 +338,9 @@ const PdfFile = () => {
               <td
                 rowSpan={3}
                 style={{
-                  height: identificationHeight,
-                  maxWidth: identificationWidth,
+                  height: thHeight,
+                  maxWidth: thMaxWidth,
+                  padding: 0,
                 }}
               >
                 3/4-LN-100-0552-A3G1A-N XR-411
@@ -354,7 +356,6 @@ const PdfFile = () => {
             </tr>
             <tr>
               <td>2</td>
-
               <td>0.75"</td>
               <td>MJ-77L</td>
               <td>5.56</td>
@@ -366,7 +367,6 @@ const PdfFile = () => {
             </tr>
             <tr>
               <td>3</td>
-
               <td>0.75"</td>
               <td>MJ-77L</td>
               <td>5.56</td>
@@ -380,7 +380,7 @@ const PdfFile = () => {
               <td>4</td>
               <td
                 rowSpan={3}
-                style={{ height: thHeight, maxWidth: thMaxWidth }}
+                style={{ height: thHeight, maxWidth: thMaxWidth, padding: 0 }}
               >
                 3/4-LN-100-0554-A3G1A-N XR-412
               </td>
@@ -395,7 +395,6 @@ const PdfFile = () => {
             </tr>
             <tr>
               <td>5</td>
-
               <td>0.75"</td>
               <td>MJ-48D</td>
               <td>5.56</td>
@@ -407,7 +406,6 @@ const PdfFile = () => {
             </tr>
             <tr>
               <td>6</td>
-
               <td>0.75"</td>
               <td>MJ-48D</td>
               <td>5.56</td>
@@ -421,7 +419,7 @@ const PdfFile = () => {
               <td>7</td>
               <td
                 rowSpan={3}
-                style={{ height: thHeight, maxWidth: thMaxWidth }}
+                style={{ height: thHeight, maxWidth: thMaxWidth, padding: 0 }}
               >
                 3/4-LN-100-0558-A3G1A-N XR-413
               </td>
@@ -436,7 +434,6 @@ const PdfFile = () => {
             </tr>
             <tr>
               <td>8</td>
-
               <td>0.75"</td>
               <td>FW-69A</td>
               <td>5.56</td>
@@ -448,7 +445,6 @@ const PdfFile = () => {
             </tr>
             <tr>
               <td>9</td>
-
               <td>0.75"</td>
               <td>FW-69A</td>
               <td>5.56</td>
@@ -461,9 +457,8 @@ const PdfFile = () => {
             <tr>
               <td>10</td>
               <td
-                rowspan="2"
-                style={{ height: thHeight, maxWidth: thMaxWidth }}
-                id="8"
+                rowspan={2}
+                style={{ height: thHeight, maxWidth: thMaxWidth, padding: 0 }}
               >
                 1-1/2-CWS-100-0552-A3G1A-N XR-414
               </td>
@@ -478,7 +473,6 @@ const PdfFile = () => {
             </tr>
             <tr>
               <td>11</td>
-
               <td>1.50"</td>
               <td>MJ-31</td>
               <td>5.56</td>
@@ -493,7 +487,7 @@ const PdfFile = () => {
               <td
                 rowSpan={3}
                 className="border-b-0"
-                style={{ height: thHeight, maxWidth: thMaxWidth }}
+                style={{ height: thHeight, maxWidth: thMaxWidth, padding: 0 }}
               >
                 3/4-LN-100-0571-A3G1A-N XR-415
               </td>
@@ -508,7 +502,6 @@ const PdfFile = () => {
             </tr>
             <tr>
               <td>13</td>
-
               <td>0.75"</td>
               <td>MJ-40C</td>
               <td>5.56</td>
@@ -520,7 +513,6 @@ const PdfFile = () => {
             </tr>
             <tr>
               <td className="border-b-0">14</td>
-
               <td className="border-b-0">0.75"</td>
               <td className="border-b-0">MJ-40C</td>
               <td className="border-b-0">5.56</td>
